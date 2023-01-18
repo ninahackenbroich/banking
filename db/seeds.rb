@@ -16,9 +16,11 @@ Account.destroy_all
 
 puts "Creating 6 Accounts"
 
-6.times do |i|
+5.times do |i|
   Account.create!(iban: Faker::Bank.iban(country_code: "de"), bic: Faker::Bank.swift_bic, client: Faker::TvShows::Friends.character, balance: rand(0..1000000))
 end
+
+Account.create!(iban: "DE4412000001101724182", bic: Faker::Bank.swift_bic, client: Faker::TvShows::Friends.character, balance: rand(0..1000000))
 
 puts "Transactions creating"
 
