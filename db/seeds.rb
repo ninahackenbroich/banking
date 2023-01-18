@@ -20,7 +20,9 @@ puts "Creating 6 Accounts"
   Account.create!(iban: Faker::Bank.iban(country_code: "de"), bic: Faker::Bank.swift_bic, client: Faker::TvShows::Friends.character, balance: rand(0..1000000))
 end
 
-Account.create!(iban: "DE4412000001101724182", bic: Faker::Bank.swift_bic, client: Faker::TvShows::Friends.character, balance: rand(0..1000000))
+# fixed account for post request
+
+Account.create!(iban: "DE4412000001101724182", bic: Faker::Bank.swift_bic, client: Faker::TvShows::Friends.character, balance: rand(0..1000000)) 
 
 puts "Transactions creating"
 
