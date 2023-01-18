@@ -51,9 +51,9 @@ The REST API to the banking app is described below.
     Status: 200 OK
     Connection: close
     Content-Type: application/json
-    Content-Length: 36
+    Content-Length: xx
 
-{
+`{
   "account": {
   "id": 1,
   "iban": "DE72894208793284351756",
@@ -176,8 +176,52 @@ The REST API to the banking app is described below.
     "account_id": 1
     }
   ]
-}
+}`
 
+## Create a new transaction
+
+### Request
+
+`POST /accounts/:id/transactions`
+    
+  `
+  url:  http://localhost:3000/accounts/1/transactions
+  method: 'POST'
+  headers: {
+    content-type: application/json,application/json
+    accept: application/json
+    accept-encoding: gzip, deflate
+    accept-language: en-US,en;q=0.8
+    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+  },
+  body: {"amount":999,"transaction_type":"transfer","iban":"DE4412000001101724182"}`
+
+### Response
+
+    HTTP/1.1 201 Created
+    Date:  Wed, 18 Jan 2023 12:36:30 GMT
+    Status: 201 Created
+    Connection: close
+    Content-Type: application/json
+    Location: /accounts/1/transactions/61
+    Content-Length: 36
+
+   `{
+        "transaction": 
+          {
+            "id": 61,
+            "transaction_date": "2023-01-18T00:00:00.000Z",
+            "amount": 999,
+            "transaction_type": "transfer",
+            "iban": "DE4412000001101724182",
+            "transaction_status": "approved",
+            "created_at": "2023-01-18T10:22:45.067Z",
+            "updated_at": "2023-01-18T10:22:45.067Z",
+            "account_id": 1
+          },
+        "balance": 273256,
+        "previous_balance": 274255
+    }`
 
 
 
