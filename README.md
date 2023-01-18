@@ -183,17 +183,17 @@ The REST API to the banking app is described below.
 
 `POST /accounts/:id/transactions`
     
-  `
-  url:  http://localhost:3000/accounts/1/transactions
-  method: 'POST'
-  headers: {
+  
+    url:  http://localhost:3000/accounts/1/transactions
+    method: 'POST'
+    headers: {
     content-type: application/json,application/json
     accept: application/json
     accept-encoding: gzip, deflate
     accept-language: en-US,en;q=0.8
     user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
-  },
-  body: {"amount":999,"transaction_type":"transfer","iban":"DE4412000001101724182"}`
+    },
+    body: {"amount":999,"transaction_type":"transfer","iban":"DE4412000001101724182"}
 
 ### Response
 
