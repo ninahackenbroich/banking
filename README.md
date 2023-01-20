@@ -42,7 +42,7 @@ The REST API to the banking app is described below.
 
 `GET /accounts/:id`
 
-    curl -i -H 'Accept: application/json' http://localhost:3000/acconts/1
+    curl -i -H 'Accept: application/json' http://localhost:3000/accounts/1
 
 ### Response
 
