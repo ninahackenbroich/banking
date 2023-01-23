@@ -1,6 +1,6 @@
 # REST API - Banking Application
 
-This is a Rails application called "VisableBank". The application performs basic banking operations like money transfers and showing of current account balance.
+The application performs basic banking operations like money transfers and showing of current account balance.
 
 The DB consists of bank accounts with transactions and balance, wired by a service class to create transactions and transfer money. 
 All implementation is about the backend part - no authentication or UI.
